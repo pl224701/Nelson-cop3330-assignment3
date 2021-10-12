@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 public class App
 {
-    public static ArrayList<String> main( String[] args ) throws IOException /*Main function which calls other functions*/
+    public static void main( String[] args ) throws IOException /*Main function which calls other functions*/
     {
         File file = new File("src/main/java/ex45/exercise45_input.txt");
         Scanner sc = new Scanner(file);
@@ -26,7 +26,6 @@ public class App
         }
         replacement replacement = new replacement();//defining object
         replacement.replacing(Words);//calling replacing function
-        return Words;
     }
 }
 class replacement
