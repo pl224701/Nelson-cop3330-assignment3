@@ -6,30 +6,50 @@ autonumber
 @startuml
 class App
 {
+    Scanner sc
+    String str1
+    String str2
+    String str3
+    String str4
+    Folder folder
+    JS js
+    CSS css
+    index index
     public static void main( String[] args )
-    String file
-    BufferedReader br
-    ArrayList<Names> Names
-    String line
-    Parser Parser
 }
-class Parser
+class CSS
 {
-    public String[] Parse(ArrayList<String> Names)
-    String[] str
-    print print
+    String test
+    public String CSS_files(String name)
+    String folder_name
+    File new_folder
 }
-class print
+class Folder
 {
-    int size
-    string test
-    public String prints(String str[])
-    File outfile
-    PrintWriter pw
-    String[] str1
+    String test
+    String folder_name
+    File new_folder
+    public String create_folder(String name)
+}
+class index
+{
+    String file_name
+    File html_file
+    String replaceString
+    BufferedWriter bw
+    public String html(String site_name, String author_name, String HTML)
+}
+class JS
+{
+    String test
+    public String javascript(String name)
+    String folder_name
+    File new_folder
 }
 
-App->Parser
-Parser->print
+App->JS
+App->index
+App->Folder
+App->CSS
 
 @enduml
