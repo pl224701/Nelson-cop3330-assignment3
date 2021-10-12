@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class App
 {
-    public static ArrayList<String> main( String[] args ) throws IOException /*Main function which calls other functions*/
+    public static void main( String[] args ) throws IOException /*Main function which calls other functions*/
     {
         String file = "src/main/java/ex41/exercise41_input.txt";
         BufferedReader br = new BufferedReader(new FileReader(file));/*Reading in file*/
@@ -24,7 +24,6 @@ public class App
         br.close();
         Alphabetize Alphabetize = new Alphabetize(); /*Creating object for class*/
         Alphabetize.Alphabetizes(Names); /*Calling function from Alphabetize*/
-        return Names;
     }
 }
 class Alphabetize
