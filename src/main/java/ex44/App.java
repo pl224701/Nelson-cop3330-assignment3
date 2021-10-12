@@ -24,14 +24,13 @@ public class App
     public class Products{
         Product[] products;
     }
-    public static Products main( String[] args ) throws IOException /*Main function which calls other functions*/
+    public static void main( String[] args ) throws IOException /*Main function which calls other functions*/
     {
         String str = new Scanner(new File("src/main/java/ex44/exercise44_input.json")).useDelimiter("\\Z").next();
         Gson gson = new Gson();
         Products productList = gson.fromJson(str,Products.class);
         input input = new input();
         input.inputs(productList);
-        return productList;
     }
 }
 class input
