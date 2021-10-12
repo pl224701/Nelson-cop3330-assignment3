@@ -4,77 +4,114 @@
  */
 
 
-package ex45;
+package ex46;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.regex.Pattern;
+import java.util.*;
 
 public class App
 {
     public static void main( String[] args ) throws IOException /*Main function which calls other functions*/
     {
-        File file = new File("src/main/java/ex45/exercise45_input.txt");
-        Scanner sc = new Scanner(file);
-        ArrayList<String> Words = new ArrayList<>();
-        String line;
-        Pattern pat = Pattern.compile(".*\\R|.+\\z");
-        while((line = sc.findWithinHorizon(pat,0))!=null) //reading in file until its finished
-        {
-            Words.add(line);
-        }
-        replacement replacement = new replacement();//defining object
-        replacement.replacing(Words);//calling replacing function
+
+        String str = new Scanner(new File("src/main/java/ex46/exercise46_input.txt")).useDelimiter("\\Z").next();
+        String[] Words = str.split("\\s+");
+        uniqueNames unique = new uniqueNames();
+        unique.unique(Words);
     }
 }
-class replacement
+class uniqueNames
 {
-    public String[] replacing(ArrayList<String> Words)
+    public String[] unique(String[] Names)
     {
-        String str[] = new String[Words.size()];//assigning string and string size
-        for(int i = 0;i< Words.size();i++) // assigning list to string array
+        List<String> list = new ArrayList<String>(Arrays.asList(Names));
+        for(int i=1;i<list.size();i++)
         {
-            str[i]=Words.get(i);
+            for(int j=0;j<i;j++)
+            {
+                if(list.get(i).equals(list.get(j)))
+                {
+                    list.remove(i);
+                    i--;
+                    break;
+                }
+            }
         }
-        for(int i = 0;i< Words.size();i++)// replacing utilizes for use
+        String[] uniqueNames = new String[list.size()];
+        for(int i=0;i<list.size();i++)
         {
-            str[i]=str[i].replaceAll("utilize","use");
+            uniqueNames[i]=list.get(i);
         }
-        print print = new print();
-        print.prints(str);
-        return str;
+        Counter counter = new Counter();
+        counter.counts(uniqueNames,Names);
+        return uniqueNames;
+    }
+}
+class Counter
+{
+    public Integer[] counts(String[] uniqueNames, String[] str)
+    {
+        Integer[] int_string = new Integer[uniqueNames.length];
+        for(int i=0;i<uniqueNames.length;i++)
+        {
+            int_string[i]=0;
+        }
+        for(int i=0;i<uniqueNames.length;i++)
+        {
+            for(int j=0;j<str.length;j++)
+            {
+                if(Objects.equals(uniqueNames[i], str[j]))
+                {
+                    int_string[i]++;
+                }
+            }
+        }
+        reorder reorder = new reorder();
+        reorder.reordered(uniqueNames,int_string);
+        return int_string;
     }
 }
 
-class print
+class reorder
 {
-    public String prints(String str[]) {
-        int size = str.length;
-        String test = "true";
-        System.out.print("What do you want the name of the output file to be? ");//prompting user for file name
-        Scanner sc = new Scanner(System.in);//scanning file name
-        String new_file = sc.nextLine();
-        try {
-            File outfile = new File(new_file);/*Creating outfile and printing to it*/
-            if (!outfile.exists()) ;
+    public Integer[] reordered(String[] uniqueNames, Integer[] int_string)
+    {
+        int temp1;
+        String temp2;
+        for(int i=0;i<int_string.length;i++)
+        {
+            for(int j=i+1;j<int_string.length;j++)
             {
-                outfile.createNewFile();
+                if(int_string[i]<int_string[j])
+                {
+                    temp1=int_string[i];
+                    int_string[i]=int_string[j];
+                    int_string[j]=temp1;
+                    temp2=uniqueNames[i];
+                    uniqueNames[i]=uniqueNames[j];
+                    uniqueNames[j]=temp2;
+                }
             }
-            PrintWriter pw = new PrintWriter(outfile);
-            for (int i = 0; i < size; i++)
-            {/*Printing output*/
-                System.out.printf("%s",str[i]);
-                pw.printf("%s",str[i]);
-            }
-            if(outfile==null)
-            {
-                test = null;
-            }
-            pw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        return test;
+        printer printer = new printer();
+        printer.print(uniqueNames,int_string);
+        return int_string;
+    }
+}
+
+class printer
+{
+    public void print(String[] uniqueNames, Integer[] int_string)
+    {
+        int size = uniqueNames.length;
+        String str = "*";
+        for(int i=0;i<size;i++)
+        {
+            System.out.format("%-9s %s",uniqueNames[i]+":", str);
+            for(int j=1; j<int_string[i];j++)
+            {
+                System.out.printf("%s",str);
+            }
+            System.out.print("\n");
+        }
     }
 }
