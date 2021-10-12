@@ -6,7 +6,7 @@ autonumber
 @startuml
 class App
 {
-    public static ArrayList<String> main( String[] args )
+    public static void main( String[] args )
     File file
     Scanner sc
     ArrayList<String> Words
