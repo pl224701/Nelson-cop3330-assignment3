@@ -45,11 +45,11 @@ class Folder
     {
         String folder_name = "./website/" + name;
         File new_folder = new File(folder_name);
-        String test = "true";
+        String test = null;
         if (!new_folder.exists())
         {
             new_folder.mkdirs();
-            test=null;
+            test="true";
         }
         return test;
     }
@@ -61,11 +61,11 @@ class JS
     {
         String folder_name = "./website/" + name +"/js/";
         File new_folder = new File(folder_name);
-        String test = "true";
+        String test = null;
         if (!new_folder.exists())
         {
             new_folder.mkdirs();
-            test = null;
+            test = "true";
         }
         return test;
     }
@@ -77,11 +77,11 @@ class CSS
     {
         String folder_name = "./website/" + name +"/css/";
         File new_folder = new File(folder_name);
-        String test = "true";
+        String test = null;
         if (!new_folder.exists())
         {
             new_folder.mkdirs();
-            test = null;
+            test = "true";
         }
         return test;
     }
