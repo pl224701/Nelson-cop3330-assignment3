@@ -4,71 +4,104 @@
  */
 
 
-package ex44;
-import java.io.File;
-import java.io.IOException;
-import java.util.Objects;
+package ex43;
+import java.io.*;
 import java.util.Scanner;
-
-import com.google.gson.Gson;
-
-
 
 public class App
 {
-    public class Product{
-        String name;
-        String price;
-        String quantity;
-    }
-    public class Products{
-        Product[] products;
-    }
-    public static void main( String[] args ) throws IOException /*Main function which calls other functions*/
+    public static void main( String[] args ) throws FileNotFoundException/*Main function which calls other functions*/
     {
-        String str = new Scanner(new File("src/main/java/ex44/exercise44_input.json")).useDelimiter("\\Z").next();
-        Gson gson = new Gson();
-        Products productList = gson.fromJson(str,Products.class);
-        input input = new input();
-        input.inputs(productList);
-    }
-}
-class input
-{
-    public int inputs(App.Products productList)
-    {
-        String name = "1";
-        Scanner sc = new Scanner(System.in);
-        int n = -1;
-        while(name!=null)
+        System.out.print("Site name: ");
+        Scanner sc = new Scanner(System.in);//Scanning text
+        String str1 = sc.nextLine();
+        System.out.print("Author: ");
+        String str2 = sc.nextLine();
+        Folder folder = new Folder();
+        folder.create_folder(str1);
+        System.out.print("Do you want a folder for JavaScript? ");
+        String str3 = sc.nextLine();
+        System.out.print("Do you want a folder for CSS? ");
+        String str4 = sc.nextLine();
+        if(str3.equals("y"))
         {
-            System.out.print("What is the product name? ");
-            name=sc.nextLine();
-            for(int i=0;i<productList.products.length;i++)
-            {
-                if(Objects.equals(name, productList.products[i].name))
-                {
-                    n=i;
-                    name=null;
-                }
-            }
-            if(name!=null)
-            {
-                System.out.println("Sorry, that product was not found in our inventory");
-            }
+            JS js = new JS();
+            js.javascript(str1);
         }
-        print print = new print();
-        print.prints(productList,n);
-        return n;
+        if(str4.equals("y"))
+        {
+            CSS css = new CSS();
+            css.CSS_files(str1);
+        }
+        index index = new index();
+        String str = new Scanner(new File("./website/template.html")).useDelimiter("\\Z").next();
+        index.html(str1,str2,str);
     }
 }
-class print
+
+class Folder
 {
-    public App.Products prints(App.Products productList, int n)
+    public String create_folder(String name)
     {
-        System.out.println("Name: " + productList.products[n].name);
-        System.out.println("Price: " + productList.products[n].price);
-        System.out.println("Quantity: " + productList.products[n].quantity);
-        return productList;
+        String folder_name = "./website/" + name;
+        File new_folder = new File(folder_name);
+        String test = "true";
+        if (!new_folder.exists())
+        {
+            new_folder.mkdirs();
+            test=null;
+        }
+        return test;
+    }
+}
+
+class JS
+{
+    public String javascript(String name)
+    {
+        String folder_name = "./website/" + name +"/js/";
+        File new_folder = new File(folder_name);
+        String test = "true";
+        if (!new_folder.exists())
+        {
+            new_folder.mkdirs();
+            test = null;
+        }
+        return test;
+    }
+}
+
+class CSS
+{
+    public String CSS_files(String name)
+    {
+        String folder_name = "./website/" + name +"/css/";
+        File new_folder = new File(folder_name);
+        String test = "true";
+        if (!new_folder.exists())
+        {
+            new_folder.mkdirs();
+            test = null;
+        }
+        return test;
+    }
+}
+
+class index
+{
+    public String html(String site_name, String author_name, String HTML)
+    {
+        String file_name = "./website/" + site_name +"/index.html/";
+        File html_file = new File(file_name);
+        String replaceString = HTML.replace("something",author_name);
+        replaceString = replaceString.replace("$Title",site_name);
+        try{
+            BufferedWriter bw = new BufferedWriter(new FileWriter(html_file));
+            bw.write(replaceString);
+            bw.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return replaceString;
     }
 }
