@@ -1,0 +1,48 @@
+This program parses a data file
+
+creates public class App
+{
+    function main()
+    {
+        Set input file equal to string
+        Declare BufferedReader
+        Declare ArrayList
+        Declare string to hold values in while loop
+        while string is not equal to null
+            ArrayList holds next string value
+        close BufferedReader
+        declare Parser to call Parse function
+        Call Parse function
+        return ArrayList for testing
+    }
+}
+create class Parser
+{
+    create function - Parse(ArrayList)
+    {
+        Declare array of strings to get ArrayList into string
+        Use for loop to give ArrayList strings to array of strings
+        Use for loop to replace all commas in array of strings with a space " "
+        Declare print to call prints function
+        call prints function
+        return array of strings for testing
+    }
+}
+create class print
+{
+    create prints function - prints(String str[])
+    {
+        creating string for testing
+        create int for size of array of strings
+        create outfile
+        if outfile does not exist
+            create outfile
+        declare PrintWriter
+        print manual output to both console and outfile
+        print looped output to both console and outfile using for loop
+        close PrintWriter
+        if outfile is equal to null
+            testing is equal to null
+        return string for testing
+    }
+}

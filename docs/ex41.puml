@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+@startuml
+class App
+{
+    public static ArrayList<String> main( String[] args )
+    String file
+    BufferedReader br
+    String line
+    ArrayList<Names> Names
+    Alphabetize Alphabetize
+}
+class Alphabetize
+{
+    public String[] Alphabetizes(ArrayList<String> Names)
+    String str[]
+    String temp
+    print print
+}
+class print
+{
+    string test
+    public String prints(String str[])
+    File outfile
+    PrintWriter pw
+}
+
+App->Alphabetize
+Alphabetize->print
+
+@enduml

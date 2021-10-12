@@ -1,0 +1,83 @@
+This function creates a website skeleton
+
+Create public class App
+{
+    create main function - void main(Strings[] args)
+    {
+        Ask user for site name
+        Declare Scanner
+        Declare first string and set it equal to user input
+        Ask user for author name
+        Declare second string and set it equal to user input
+        Declare Folder to call create_folder function
+        call create_folder function giving site name
+        Ask user if they want a folder for Javascript
+        Declare third string and set it equal to user input
+        Ask user if they want a folder for CSS
+        Declare forth string and set it equal to user input
+        if (third string equals "y")
+            declare JS to call javascript function
+            call javascript function
+        if (forth string equals "y")
+            declare CSS to call CSS_files function
+            call CSS_files function
+        declare index to call html function
+        Declare new string to hold html template
+        call html function
+        return first string + second string + third string + forth string for testing;
+    }
+}
+create class Folder
+{
+    create function - create_folder(String name)
+    {
+        Create string for testing and set it equal to something
+        Declare string for folder name
+        create new file using folder name
+        if(folder does not exist)
+            returns true if folder was created
+            string for test = null
+        return string for testing
+    }
+}
+create class JS
+{
+    create function - javascript(String name)
+    {
+        Create string for testing and set it equal to something
+        Declare string for folder name
+        create new file using folder name
+        if(folder does not exist)
+            returns true if folder was created
+            string for test = null
+        return string for testing
+    }
+}
+create class CSS
+{
+    create function - CSS_files(String name)
+    {
+       Create string for testing and set it equal to something
+       Declare string for folder name
+       create new file using folder name
+       if(folder does not exist)
+            returns true if folder was created
+            string for test = null
+       return string for testing
+    }
+}
+
+create class index
+{
+    create function - html(String site_name, String author_name, String HTML)
+    {
+        Declare string for html name
+        Create new file for html file
+        Declare new string and replace meta value for authors name in HTML string and set new string equal to this
+        Set new string equal to itself but with title value as site_name for the string
+        Declare BufferedWriter to write in html file
+        Write new string in html file
+        close BufferedWriter
+        return new string for testing purposes
+    }
+}

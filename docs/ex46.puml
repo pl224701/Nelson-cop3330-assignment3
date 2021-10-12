@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+@startuml
+class App
+{
+    public static String[] main( String[] args )
+    String str
+    String[] Words
+    uniqueNames unique
+}
+class uniqueNames
+{
+    public String[] unique(String[] Names)
+    List<String> list
+    String[] uniqueNames
+    Counter counter
+
+}
+class Counter
+{
+    public Integer[] counts(String[] uniqueNames, String[] str)
+    Integer[] int_string
+    reorder reorder
+}
+class reorder
+{
+    public Integer[] reordered(String[] uniqueNames, Integer[] int_string)
+    int temp1
+    String temp2
+    printer printer
+}
+class printer
+{
+    public void print(String[] uniqueNames, Integer[] int_string)
+    String str
+    int size
+}
+
+App->uniqueNames
+uniqueNames->Counter
+Counter->reorder
+reorder->printer
+
+@enduml

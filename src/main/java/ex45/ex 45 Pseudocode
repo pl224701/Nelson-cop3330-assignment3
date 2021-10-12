@@ -1,0 +1,49 @@
+This function replaces utilizes for use in a given file
+
+creates public class App
+{
+   function main()
+   {
+       Create file that holds input file
+       Create scanner and make it scan the file
+       Declare ArrayList to hold file as an ArrayList
+       Declare string to hold parts of the file
+       Declare pattern to give output correct formatting
+       User while loop such that the string follows the pattern and is not equal to null
+           add string to array list
+           repeat until string is equal to null
+       Declare replacement to call replacing function
+   }
+}
+create class replacement
+{
+   create function - replacing(ArrayList<String> Words)
+   {
+       Declare array of strings to get ArrayList into string
+       Use for loop to give ArrayList strings to array of strings
+       Replace utilize for use for within the array of strings
+       Declare print to call prints function
+       call prints function
+   }
+}
+create class print
+{
+   create prints function - prints(String str[])
+   {
+       create int for size of array of strings
+       create string equal to something
+       Prompt user for name of outfile
+       Create scanner
+       Set users given file name equal to a string
+       Create a file using the given file name from the user
+       if outfile does not exist
+           create outfile
+       declare PrintWriter
+       print the string str[] to console and outfile using for loop
+       if(file is equal to null)
+            string equal to something equals null
+       close PrintWriter
+       return string equal to something
+   }
+}
+

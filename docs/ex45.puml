@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+@startuml
+class App
+{
+    public static ArrayList<String> main( String[] args )
+    File file
+    Scanner sc
+    ArrayList<String> Words
+    String line
+    replacement replacement
+}
+class replacement
+{
+    public String[] replacing(ArrayList<String> Words)
+    String[] str
+    print print
+}
+class print
+{
+    public String prints(String str[])
+    String test
+    int size
+    Scanner sc
+    String new_file
+}
+
+App->replacement
+replacement->print
+
+@enduml

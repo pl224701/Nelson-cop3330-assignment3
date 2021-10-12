@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+@startuml
+class App
+{
+    class Product()
+    String name
+    String price
+    String quantity
+    class Products()
+    Product[] products
+    public static Products main( String[] args )
+    String str
+    Gson gson
+    Products productList
+    input input
+}
+class input
+{
+    public int inputs(App.Products productList)
+    String name
+    Scanner sc
+    int n
+    print print
+}
+class print
+{
+    public App.Products prints(App.Products productList, int n)
+}
+
+App->input
+input->print
+
+@enduml

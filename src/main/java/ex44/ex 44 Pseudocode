@@ -1,0 +1,58 @@
+This function pulls data from a JSON file and asks user for inputs regarding the file
+
+Create public class App
+{
+    create class for Product
+    {
+        declare string for name
+        declare string for price
+        declare string for quantity
+    }
+    create class for Products
+    {
+        Holds an array of Product class
+    }
+    create main function - void main(Strings[] args)
+    {
+        Declare string that is equal to read in JSON file
+        Declare Gson
+        create Products variable and set equal to corresponding values from the JSON file
+        Declare input to call inputs function
+        call inputs function
+        return Products variable for testing
+    }
+}
+
+Create class for input
+{
+    create inputs function - inputs(App.Products productList)
+    {
+        Create string and set it to some value
+            Declare scanner
+            declare int and set it equal to 0
+            Declare while loop so that string cannot equal null
+            {
+                Prompt user for product name
+                string is equal to user input
+                declare for loop such that it loops as many times as the length of array of Product in Products
+                    if string is equal to one of the names in the Products array
+                        set int = value of integer in for loop
+                        set string = null to break while loop
+                if name is not equal to null
+                    Tell user that, that product is not in inventory
+                repeat loop until user inputs valid product
+            }
+            declare print to call prints function
+            call prints function
+            return int for testing
+    }
+}
+
+Create class for print
+{
+    create prints function - prints(App.Products productList, int n)
+    {
+        print name, price, and quantity in correct format
+        return productList for testing
+    }
+}

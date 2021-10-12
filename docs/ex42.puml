@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+@startuml
+class App
+{
+    public static ArrayList<String> main( String[] args )
+    String file
+    BufferedReader br
+    ArrayList<Names> Names
+    String line
+    Parser Parser
+}
+class Parser
+{
+    public String[] Parse(ArrayList<String> Names)
+    String[] str
+    print print
+}
+class print
+{
+    int size
+    string test
+    public String prints(String str[])
+    File outfile
+    PrintWriter pw
+    String[] str1
+}
+
+App->Parser
+Parser->print
+
+@enduml

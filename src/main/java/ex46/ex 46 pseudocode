@@ -1,0 +1,75 @@
+This function takes a file and finds the unique words and their frequency
+
+creates public class App
+{
+    function main()
+    {
+        Create string and set it equal to new file input
+        create array of strings given the string using \\s+ as regex so that you get white spaces and new lines in the string
+        Declare uniqueNames function to call unique function
+        call unique function
+        return Words for test
+    }
+}
+create class uniqueNames
+{
+    create unique function - unique(String[] Names)
+    {
+        Declare ArrayList to hold String[] Names as an ArrayList to hold unique words from the string
+        Create first for loop using int i=1,i++
+            Create second for loop using int j=0,j++
+                if the value for the corresponding j value and i value equal each other in the ArrayList
+                    remove the i value from the ArrayList
+                    decrease i by 1
+                    break the second loop
+        Declare new array of strings to hold ArrayList for the unique names
+        use for loop to initialize each string for the array of strings to the corresponding ArrayList value
+        Declare counter to call counts function
+        call counts function
+        return unique names array of strings for test
+    }
+}
+create class Counter
+{
+    create counts function - (String[] uniqueNames, String[] str)
+    {
+        create array of integers of the length of uniqueNames
+        set all values in the array of integers equal to 0
+        Create first for loop using int i=0
+            Create second for loop using int j=0
+                if the i string for uniqueNames matches the corresponding j string for str increase the corresponding integer value in the array of integers
+        This loop finds the frequency of each of the uniqueNames
+        Declare reorder to call reordered function
+        call reordered function
+        return array of integers
+    }
+}
+create class reorder
+{
+    create reordered function - reordered(String[] uniqueNames, Integer[] int_string)
+    {
+        create int to hold temporary integers in future loops
+        create string to hold temporary strings in future loops
+        create first for loop using int i=0
+            create second for loop using int j=i+1
+                if the value for the corresponding j int_string is greater than the corresponding i value
+                    use temporary int to swap the values such that they are in numerical order
+                    use the temporary string to swap the string such that they follow the new int_string order
+        Declare printer to call print function
+        call print function
+        return reordered array of integers, int_string
+    }
+}
+Create class printer
+{
+    create  print  function - print(String[] uniqueNames, Integer[] int_string)
+    {
+        create int to hold size of uniqueNames/int_string
+        declare a string to hold "*" for formatting purposes
+        Create first for loop such that int i=0
+            print the unique names according to their corresponding i value and include string
+            create second for loop such that int j=1
+                print additional "*"s using string such that the number of "*"s matches up with the corresponding int_string value
+            print new line
+    }
+}

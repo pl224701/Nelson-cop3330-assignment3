@@ -1,0 +1,53 @@
+This program sorts a list of names
+
+creates public class App
+{
+    function main()
+    {
+        Set input file equal to string
+        Declare BufferedReader
+        Declare ArrayList
+        Declare string to hold values in while loop
+        while string is not equal to null
+            ArrayList holds next string value
+        close BufferedReader
+        declare Alphabetize to call Alphabetizes function
+        Call Alphabetizes function
+        return ArrayList for Testing
+    }
+}
+
+create class Alphabetize
+{
+    create function - Alphabetizes(ArrayList)
+    {
+        Declare array of string to get ArrayList into string
+        Use for loop to give ArrayList strings to array of strings
+        Declare temp string
+        Declare first for loop using int i=0
+            Declare second for loop using j=i+1
+                Check if string values for j and i are alphabetical
+                    If not, use temp string to hold i value for array of string
+                    Set i value for array of string to j value
+                    set j value to temp
+        Declare print to call prints function
+        call prints function
+        return array of strings for testing
+    }
+}
+create class print
+{
+    create prints function - prints(String str[])
+    {
+        declare string for testing
+        create int for size of array of strings
+        create outfile
+        if outfile does not exist
+            create outfile
+        declare PrintWriter
+        print manual output to both console and outfile
+        print looped output to both console and outfile using for loop
+        close PrintWriter
+        return string used for testing
+    }
+}
