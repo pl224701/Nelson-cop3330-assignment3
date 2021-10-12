@@ -20,14 +20,14 @@ public class AppTest
     @Test
     public void notEqualToNull2()
     {
-        CSS test = new CSS();
-        assertNotNull(test.CSS_files("awesomeco"));
+        Folder test = new Folder();
+        assertNotNull(test.create_folder("awesomeco"));
     }
     @Test
     public void notEqualToNull3()
     {
-        Folder test = new Folder();
-        assertNotNull(test.create_folder("awesomeco"));
+        CSS test = new CSS();
+        assertNotNull(test.CSS_files("awesomeco"));
     }
     @Test
     public void notEqualToNull4()
