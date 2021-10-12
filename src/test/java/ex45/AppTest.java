@@ -27,7 +27,7 @@ public class AppTest
         String a = "One should never utilize the word \"utilize\" in writing. Use \"use\" instead.\n" +
                 "For example, \"She uses an IDE to write her Java programs\" instead of \"She\n" +
                 "utilizes an IDE to write her Java programs\".";
-        ArrayList<String> tester = new ArrayList<String>(Arrays.asList(a.split(" ")));
+        ArrayList<String> tester = new ArrayList<String>(Arrays.asList(a.split("")));
         InputStream sysInBackup = System.in;
         ByteArrayInputStream in = new ByteArrayInputStream("exercise_file.txt".getBytes());
         System.setIn(in);
@@ -40,7 +40,7 @@ public class AppTest
         String a = "One should never utilize the word \"utilize\" in writing. Use \"use\" instead.\n" +
                 "For example, \"She uses an IDE to write her Java programs\" instead of \"She\n" +
                 "utilizes an IDE to write her Java programs\".";
-        String[] b = a.split(" ");
+        String[] b = a.split("");
         InputStream sysInBackup = System.in;
         ByteArrayInputStream in = new ByteArrayInputStream("exercise_file.txt".getBytes());
         System.setIn(in);
