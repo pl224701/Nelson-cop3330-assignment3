@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class App
 {
-    public static String main( String[] args ) throws FileNotFoundException/*Main function which calls other functions*/
+    public static void main( String[] args ) throws FileNotFoundException/*Main function which calls other functions*/
     {
         System.out.print("Site name: ");
         Scanner sc = new Scanner(System.in);//Scanning text
@@ -36,7 +36,6 @@ public class App
         index index = new index();
         String str = new Scanner(new File("./website/template.html")).useDelimiter("\\Z").next();
         index.html(str1,str2,str);
-        return str1+str2+str3+str4;
     }
 }
 
