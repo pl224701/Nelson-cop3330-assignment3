@@ -15,7 +15,7 @@ class App
     JS js
     CSS css
     index index
-    public static String main( String[] args )
+    public static void main( String[] args )
 }
 class CSS
 {
