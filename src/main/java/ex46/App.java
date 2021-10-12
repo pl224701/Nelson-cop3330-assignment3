@@ -10,14 +10,13 @@ import java.util.*;
 
 public class App
 {
-    public static String[] main( String[] args ) throws IOException /*Main function which calls other functions*/
+    public static void main( String[] args ) throws IOException /*Main function which calls other functions*/
     {
 
         String str = new Scanner(new File("src/main/java/ex46/exercise46_input.txt")).useDelimiter("\\Z").next();
         String[] Words = str.split("\\s+");
         uniqueNames unique = new uniqueNames();
         unique.unique(Words);
-        return Words;
     }
 }
 class uniqueNames
