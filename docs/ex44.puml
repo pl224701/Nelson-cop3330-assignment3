@@ -12,7 +12,7 @@ class App
     String quantity
     class Products()
     Product[] products
-    public static Products main( String[] args )
+    public static void main( String[] args )
     String str
     Gson gson
     Products productList
